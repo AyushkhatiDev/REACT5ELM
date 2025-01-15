@@ -1,6 +1,3 @@
-// src/components/ElementsSection.jsx
-import React from 'react';
-
 const ElementsSection = () => {
   const elements = [
     { name: 'Air', description: 'Lightness and freshness in our products' },

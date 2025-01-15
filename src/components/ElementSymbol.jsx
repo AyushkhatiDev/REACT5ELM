@@ -1,5 +1,4 @@
-// src/components/ElementSymbol.jsx
-import React from 'react';
+import PropTypes from 'prop-types';
 
 const ElementSymbol = ({ element, className }) => (
   <div 
@@ -9,5 +8,10 @@ const ElementSymbol = ({ element, className }) => (
     <span className="text-sm font-medium text-gray-300">{element}</span>
   </div>
 );
+
+ElementSymbol.propTypes = {
+  element: PropTypes.string.isRequired,
+  className: PropTypes.string
+};
 
 export default ElementSymbol;
