@@ -57,53 +57,55 @@ const ExplorePage = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <main className="min-h-screen bg-stone-50">
-      {/* Subtle Page Header */}
-      <div className="bg-white border-b border-stone-100">
-        <div className="container mx-auto px-6 py-8">
-          <h1 className="text-2xl font-light text-emerald-950 tracking-wider mb-2">
-            COLLECTION
-          </h1>
-          <p className="text-emerald-800/70 font-light text-sm tracking-wide">
-            Discover ancient Ayurvedic remedies for modern wellness
-          </p>
+      Navbar
+      <nav className="bg-white shadow-md z-40 sticky top-0">
+        <div className="container mx-auto px-6 h-16 flex items-center justify-between">
+          <h1 className="text-xl font-semibold text-emerald-900">Ayurveda Store</h1>
+          <ul className="flex items-center space-x-6 text-sm font-light text-emerald-800">
+            <li>Home</li>
+            <li>Products</li>
+            <li>Contact</li>
+          </ul>
         </div>
-      </div>
+      </nav>
 
       {/* Category Filter Bar */}
-      <div className={`sticky top-0 bg-white/95 backdrop-blur-sm border-b border-stone-100 z-50 transition-all duration-300 ${
-        isScrolled ? 'shadow-sm' : ''
-      }`}>
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-8">
+      <div
+        className={`sticky top-16 bg-white/95 backdrop-blur-sm border-b border-stone-100 z-50 transition-all duration-300 ${
+          isScrolled ? 'shadow-sm' : ''
+        }`}
+      >
+        <div className="container mx-auto px-6">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center space-x-12">
               <Filter className="w-5 h-5 text-emerald-900 transition-transform duration-300 hover:rotate-180" />
               {categories.map(category => (
                 <button
                   key={category}
                   className={`text-sm font-light tracking-wide transition-all duration-300 relative ${
-                    selectedCategory === category 
-                      ? 'text-emerald-900' 
+                    selectedCategory === category
+                      ? 'text-emerald-900'
                       : 'text-emerald-800/70 hover:text-emerald-900'
                   } py-2`}
                   onClick={() => setSelectedCategory(category)}
                 >
                   {category.toUpperCase()}
                   {selectedCategory === category && (
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-emerald-900 transform transition-transform duration-300" />
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-emerald-900 transform transition-transform duration-300" />
                   )}
                 </button>
               ))}
             </div>
-            <button className="flex items-center space-x-2 text-sm font-light text-emerald-900 tracking-wide transition-colors duration-300 hover:text-emerald-700">
+            <button className="flex items-center space-x-2 text-sm font-light text-emerald-900 tracking-wide transition-colors duration-300 hover:text-emerald-700 group">
               <span>SORT BY</span>
-              <ChevronDown className="w-4 h-4 transition-transform duration-300 hover:rotate-180" />
+              <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" />
             </button>
           </div>
         </div>
@@ -115,8 +117,8 @@ const ExplorePage = () => {
           {products
             .filter(product => selectedCategory === 'All' || product.category === selectedCategory)
             .map(product => (
-              <div 
-                key={product.id} 
+              <div
+                key={product.id}
                 className="group bg-white rounded-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 {/* Product Image Container */}

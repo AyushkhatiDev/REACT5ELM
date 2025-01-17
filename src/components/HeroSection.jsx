@@ -27,7 +27,7 @@ const HeroSection = () => {
             
             {/* Scroll Indicator */}
             <div className="text-emerald-900/80 text-xs tracking-wider font-light transform -rotate-90 origin-bottom-right pb-8 pr-4">
-              SCROLL TO DISCOVER
+              {/* SCROLL TO DISCOVER */}
             </div>
           </div>
         </div>

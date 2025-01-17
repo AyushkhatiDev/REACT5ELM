@@ -4,6 +4,7 @@ import ElementsSection from '../components/ElementsSection';
 import Footer from '../components/Footer';
 import DiscoverySection from '../components/DiscoverySection';  
 import IngredientsSection from '../components/IngredientsSection';
+import ScrollButton from '../components/SrollButton';
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
       <DiscoverySection />
       <ElementsSection />
       <Footer />
+      <ScrollButton />
     </div>
   );
 };
