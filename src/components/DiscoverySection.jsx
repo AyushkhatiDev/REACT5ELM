@@ -15,6 +15,7 @@ const BackgroundPattern = () => (
   </svg>
 );
 
+// Product Card Component
 const ProductCard = ({ product, index }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -103,31 +104,8 @@ const ProductCard = ({ product, index }) => {
   );
 };
 
-const DiscoverySection = () => {
+const MainSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-
-  const features = [
-    {
-      icon: <Leaf className="w-6 h-6" />,
-      title: "Natural Ingredients",
-      description: "Carefully sourced organic herbs and botanicals, following traditional Ayurvedic principles for optimal wellness."
-    },
-    {
-      icon: <Heart className="w-6 h-6" />,
-      title: "Pure Extraction",
-      description: "Traditional extraction methods preserve the vital essence and potency of each ingredient."
-    },
-    {
-      icon: <Sun className="w-6 h-6" />,
-      title: "Holistic Balance",
-      description: "Formulated to balance the five elements (Panchamahabhutas) within your body's constitution."
-    },
-    {
-      icon: <Star className="w-6 h-6" />,
-      title: "Ancient Wisdom",
-      description: "Centuries-old Ayurvedic knowledge adapted for modern wellness needs."
-    }
-  ];
 
   const products = [
     {
@@ -160,49 +138,39 @@ const DiscoverySection = () => {
     }
   ];
 
+  const features = [
+    {
+      icon: <Leaf className="w-6 h-6" />,
+      title: "Natural Ingredients",
+      description: "Carefully sourced organic herbs and botanicals, following traditional Ayurvedic principles for optimal wellness."
+    },
+    {
+      icon: <Heart className="w-6 h-6" />,
+      title: "Pure Extraction",
+      description: "Traditional extraction methods preserve the vital essence and potency of each ingredient."
+    },
+    {
+      icon: <Sun className="w-6 h-6" />,
+      title: "Holistic Balance",
+      description: "Formulated to balance the five elements (Panchamahabhutas) within your body's constitution."
+    },
+    {
+      icon: <Star className="w-6 h-6" />,
+      title: "Ancient Wisdom",
+      description: "Centuries-old Ayurvedic knowledge adapted for modern wellness needs."
+    }
+  ];
+
   return (
     <div className="relative bg-gradient-to-b from-[#C4C3C0]/20 to-white min-h-screen">
       <BackgroundPattern />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-        {/* Rest of the JSX remains the same */}
+        {/* Products Section First */}
         <div className="text-center mb-16">
           <h2 className="text-3xl font-light text-[#555D50] mb-4">
-            Discover Our Products
-          </h2>
-          <p className="text-[#954535] max-w-2xl mx-auto">
-            Ancient wisdom meets modern wellness in our carefully crafted formulations
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg 
-                       transition-all duration-300 border border-[#954535]/10 hover:border-[#954535]/30
-                       overflow-hidden"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <div className={`text-[#954535] mb-4 transition-transform duration-300 inline-block
-                            ${hoveredIndex === index ? 'scale-110' : ''}`}>
-                {feature.icon}
-              </div>
-              <h3 className="text-[#555D50] text-lg mb-2 font-medium">
-                {feature.title}
-              </h3>
-              <p className="text-[#555D50]/80 text-sm">
-                {feature.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-20">
-          <h3 className="text-2xl text-center text-[#555D50] mb-12">
             Featured Products
-          </h3>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {products.map((product, index) => (
               <ProductCard key={index} product={product} index={index} />
@@ -220,9 +188,45 @@ const DiscoverySection = () => {
             View All Products
           </button>
         </div>
+
+        {/* Discovery Section Second */}
+        <div className="mt-32">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-light text-[#555D50] mb-4">
+              Discover Our Products
+            </h2>
+            <p className="text-[#954535] max-w-2xl mx-auto">
+              Ancient wisdom meets modern wellness in our carefully crafted formulations
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, index) => (
+              <div 
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg 
+                         transition-all duration-300 border border-[#954535]/10 hover:border-[#954535]/30
+                         overflow-hidden"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                <div className={`text-[#954535] mb-4 transition-transform duration-300 inline-block
+                              ${hoveredIndex === index ? 'scale-110' : ''}`}>
+                  {feature.icon}
+                </div>
+                <h3 className="text-[#555D50] text-lg mb-2 font-medium">
+                  {feature.title}
+                </h3>
+                <p className="text-[#555D50]/80 text-sm">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default DiscoverySection;
+export default MainSection;

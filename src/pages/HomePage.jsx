@@ -11,8 +11,8 @@ const HomePage = () => {
     <div className="min-h-screen bg-[#C9C0BB] bg-opacity-10">
       <Navbar />
       <HeroSection />
-      <IngredientsSection />
       <DiscoverySection />
+      <IngredientsSection />
       <ElementsSection />
       <Footer />
       <ScrollButton />
