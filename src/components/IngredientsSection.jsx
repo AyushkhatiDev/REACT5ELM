@@ -37,7 +37,7 @@ const IngredientsSection = () => {
       traditionalUse: "Used in Ayurveda for over 3,000 years as a Rasayana (tonic)",
       rating: 4.9,
       image: {
-        src: "/api/placeholder/900/600?text=Ashwagandha",
+        src: "https://images.unsplash.com/photo-1626808642875-0aa545482dfb?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D",
         alt: "Fresh Ashwagandha root and powder"
       },
       detailedInfo: {
@@ -57,7 +57,7 @@ const IngredientsSection = () => {
       traditionalUse: "Ancient spice used in traditional medicine for centuries",
       rating: 4.8,
       image: {
-        src: "/api/placeholder/900/600?text=Turmeric",
+        src: "https://images.unsplash.com/photo-1530076886461-ce58ea8abe24?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         alt: "Fresh turmeric root and powder"
       },
       detailedInfo: {
@@ -97,7 +97,7 @@ const IngredientsSection = () => {
       traditionalUse: "Classical Ayurvedic formulation for gut health",
       rating: 4.9,
       image: {
-        src: "/api/placeholder/900/600?text=Triphala",
+        // src: "https://unsplash.com/photos/a-person-swimming-in-the-ocean-with-a-camera-NhWxAIs61MM",
         alt: "Triphala powder and fruits"
       },
       detailedInfo: {
